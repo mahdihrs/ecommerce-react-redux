@@ -13,7 +13,7 @@ import ProductList from '../../components/ProductsAtMainPage'
 //data
 import dummies from '../../components/ProductsAtMainPage/dummy-products'
 
-export default class index extends Component {
+export default class Home extends Component {
 
 	render() {
 		return (

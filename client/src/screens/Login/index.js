@@ -40,7 +40,6 @@ class Login extends Component {
         errorMsg: ''
       })
       localStorage.setItem('token', data.token)
-      // console.log(this.history)
       this.props.history.push('/')
     })
     .catch(({response}) => {

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 //framework
 import Card from '@material-ui/core/Card';
@@ -26,7 +27,7 @@ function ProductList(props) {
       <CardActions>
         <Grid container justify="center">
           <Grid item>
-            <Button style={{fontSize: '0.5em'}}><u>Shop Now</u></Button>
+            <Link to={`/details/5cee0838b802c913eb647530`}><Button style={{fontSize: '0.5em'}}><u>Shop Now</u></Button></Link>
           </Grid>
         </Grid>
       </CardActions>
