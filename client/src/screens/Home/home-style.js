@@ -1,6 +1,6 @@
 const styles = {
   horizontalLine: {
-    width: 960,
+    width: `100%`,
     backgroundColor: '#000'
   },
   jargon: {

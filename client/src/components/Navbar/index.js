@@ -1,52 +1,49 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom'
 
-//css framework
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
-import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
 
-//style
-import styles from './navbar-style'
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1
+  },
+  brand: {
+    color: '#fff',
+    textDecoration: 'none'
+  }
+}));
 
-function SearchAppBar(props) {
-  const { classes } = props;
+function ButtonAppBar() {
+  const classes = useStyles();
   return (
     <div className={classes.root}>
-      <AppBar color="#fff" position="static">
+      <AppBar position="static" color="primary">
         <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="Menu">
             <MenuIcon />
           </IconButton>
-          <Typography align="center" className={classes.title} variant="h6" color="inherit" noWrap>
-            <u>Marche</u>
-            </Typography>
-          <div className={classes.grow} />
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-            />
-          </div>
+          <Typography variant="h6" className={classes.title}>
+            <Link to={`/`} className={classes.brand}>
+              Marche
+            </Link>
+          </Typography>
+          <Link className={classes.brand} to={`/login`}><Button color="inherit">Login</Button></Link>
         </Toolbar>
       </AppBar>
     </div>
   );
 }
 
-SearchAppBar.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(SearchAppBar);
+export default ButtonAppBar;

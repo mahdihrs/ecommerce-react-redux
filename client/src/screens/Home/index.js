@@ -26,7 +26,7 @@ export default class Home extends Component {
 				{/* <img src="https://images.pexels.com/photos/713829/pexels-photo-713829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=960" alt="Header1" /> */}
 				<img src="https://images.pexels.com/photos/713829/pexels-photo-713829.jpeg?auto=compress&cs=tinysrgb&dpr=2" width="100%" height="60%" alt="Header1" />
 				<hr style={styles.jargon} />
-				<Grid container spacing={16} >
+				<Grid container spacing={24} justify="center">
 					{dummies.map(e => {
 						return (
 							<Grid item>

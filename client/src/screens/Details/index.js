@@ -7,8 +7,7 @@ import server from '../../api'
 import Grid from '@material-ui/core/Grid'
 
 function Details (props) {
-  // const [ resId, setResId ] = useState('5cee0838b802c913eb647530')
-  const [ prod, setProd ] = useState('')
+  const [ prod, setProd ] = useState({})
 
   useEffect( () => {
     server({
@@ -16,8 +15,8 @@ function Details (props) {
       method: 'get'
     })
     .then(({data}) => {
-      // console.log(data)
       setProd(data)
+      console.log(props, 'props')
     })
     .catch(err => {
       console.log(err)
@@ -30,12 +29,12 @@ function Details (props) {
     <div>
       <h2>{prod.name}</h2>
       {/* <hr /> */}
-      <Grid container spacing={8} style={{width: '100%'}} justify="space-evenly">
-        <Grid item>
+      <Grid container direction="row" spacing={8} style={{width: '100%'}} justify="space-evenly">
+        <Grid item style={{width: window.innerWidth / 2}}>
           <img src={prod.image} alt={prod.name} style={{width: imageWidth}} />
           <p>{window.innerWidth}</p>
         </Grid>
-        <Grid item>
+        <Grid item style={{width: window.innerWidth / 2}}>
           <h4>Description</h4>
           <p>{prod.name}</p>
           <p>{prod.description}</p>

@@ -13,7 +13,7 @@ import Grid from '@material-ui/core/Grid';
 function ProductList(props) {
 
   return (
-    <Card style={{maxWidth: 160, height: 250}}>
+    <Card style={{maxWidth: 200, height: 250, margin: 5}}>
       <CardActionArea>
         <CardMedia
           component="img"
