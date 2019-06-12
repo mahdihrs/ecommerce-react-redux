@@ -9,6 +9,7 @@ import Grid from '@material-ui/core/Grid';
 //components
 import TopMenu from '../../components/Top-Menu'
 import ProductList from '../../components/ProductsAtMainPage'
+import Footer from '../../components/Footer'
 
 //data
 import dummies from '../../components/ProductsAtMainPage/dummy-products'
@@ -26,7 +27,7 @@ export default class Home extends Component {
 				{/* <img src="https://images.pexels.com/photos/713829/pexels-photo-713829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=960" alt="Header1" /> */}
 				<img src="https://images.pexels.com/photos/713829/pexels-photo-713829.jpeg?auto=compress&cs=tinysrgb&dpr=2" width="100%" height="60%" alt="Header1" />
 				<hr style={styles.jargon} />
-				<Grid container spacing={24} justify="center">
+				<Grid container spacing={1} justify="center">
 					{dummies.map(e => {
 						return (
 							<Grid item>
@@ -35,6 +36,7 @@ export default class Home extends Component {
 						)
 					})}
 				</Grid>
+				<Footer />
 			</div>
 		)
 	}

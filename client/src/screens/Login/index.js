@@ -186,6 +186,24 @@ function Login(props) {
         password: state.password
       }
     })
+    // async () => {
+    //   try {
+    //     const userLogin = await server({
+    //       method: 'post',
+    //       url: '/users/login',
+    //       data: {
+    //         email: state.email,
+    //         password: state.password
+    //       }
+    //     })
+    //     console.log(userLogin.data)
+    //   } catch (err) {
+    //       setState({
+    //         ...setState,
+    //         errorMsg: err.response.data.msg
+    //       })          
+    //   }
+    // }
     .then(({data}) => {
       setState({
         ...setState,
