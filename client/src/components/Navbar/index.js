@@ -32,14 +32,23 @@ function ButtonAppBar() {
       <AppBar position="static" color="primary">
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="Menu">
-            <MenuIcon />
+            {/* <MenuIcon /> */}
+            <Link to={'/shop'}>
+              Shop 
+            </Link>
           </IconButton>
+          {/* <Typography variant="h6" className={classes.title}>
+          </Typography> */}
           <Typography variant="h6" className={classes.title}>
             <Link to={`/`} className={classes.brand}>
               Marche
             </Link>
           </Typography>
-          <Link className={classes.brand} to={`/login`}><Button color="inherit">Login</Button></Link>
+          <Link className={classes.brand} to={`/login`}>
+            <Button color="inherit">
+              Login
+            </Button>
+          </Link>
         </Toolbar>
       </AppBar>
     </div>

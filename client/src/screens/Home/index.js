@@ -31,7 +31,7 @@ export default class Home extends Component {
 					{dummies.map(e => {
 						return (
 							<Grid item>
-								<ProductList products={e} />
+								<ProductList products={e} maxWidth={200} height={250} contentHeight="140" />
 							</Grid>
 						)
 					})}
