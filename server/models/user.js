@@ -16,7 +16,7 @@ const userSchema = new Schema({
             },
               msg: "Email validation failed: Please write a correct email format"
             }, {
-              isAsync: true,
+            //   isAsync: true,
               validator: function(v, cb) {
                 User.findOne({
                     email: v

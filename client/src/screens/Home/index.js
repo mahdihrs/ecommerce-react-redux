@@ -30,9 +30,11 @@ export default class Home extends Component {
 				<Grid container spacing={1} justify="center">
 					{dummies.map(e => {
 						return (
-							<Grid item>
-								<ProductList products={e} maxWidth={200} height={250} contentHeight="140" />
-							</Grid>
+							<div key={e.name}>
+								<Grid item>
+									<ProductList products={e} maxWidth={200} height={300} contentHeight="140" />
+								</Grid>
+							</div>
 						)
 					})}
 				</Grid>

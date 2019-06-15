@@ -61,19 +61,16 @@ function Shop () {
       <Grid container spacing={1} justify="space-evenly" style={{marginTop: 40}}>
         {products.map(e => {
           return (
-            <div>
+            <div key={e._id}>
               {/* <img src={e.image} /> */}
               {/* <p>{e.description}</p> */}
               <Grid item>
-                <ProductList products={e} maxWidth={200} height={300} contentHeight="200" />
+                <ProductList products={e} maxWidth={225} height={350} contentHeight="200" />
                 </Grid>
             </div>
           )
         })}        
       </Grid>
-      {/* <p>{JSON.stringify(products[0]['description'])}</p> */}
-      {/* <p>{typeof products[0].description}</p> */}
-      {/* <img src={JSON.stringify(products[0].image)} /> */}
     </div>
   )
 }

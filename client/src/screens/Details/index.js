@@ -5,13 +5,15 @@ import server from '../../api'
 
 //framework
 import Grid from '@material-ui/core/Grid'
+import CardMedia from '@material-ui/core/CardMedia';
 
 function Details (props) {
   const [ prod, setProd ] = useState({})
 
   useEffect( () => {
+    // console.log(props.match.params.id)
     server({
-      url: `/products/5cee0838b802c913eb647530`,//${resId},
+      url: `/products/${props.match.params.id}`,
       method: 'get'
     })
     .then(({data}) => {
@@ -29,10 +31,16 @@ function Details (props) {
     <div>
       <h2>{prod.name}</h2>
       {/* <hr /> */}
-      <Grid container direction="row" spacing={8} style={{width: '100%'}} justify="space-evenly">
+      {/* <p>{JSON.stringify(prod)}</p> */}
+      <Grid container direction="row" spacing={8} style={{width: '100%'}} justify="space-around">
         <Grid item style={{width: window.innerWidth / 2}}>
-          <img src={prod.image} alt={prod.name} style={{width: imageWidth}} />
-          <p>{window.innerWidth}</p>
+          <CardMedia
+            component="img"
+            alt={prod.name}
+            img src={prod.image}
+            height="80%"
+            style={{objectFit: 'contain'}}
+          />
         </Grid>
         <Grid item style={{width: window.innerWidth / 2}}>
           <h4>Description</h4>

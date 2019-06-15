@@ -36,7 +36,7 @@ export default class index extends Component {
   render() {
     return (
       <div>
-        <Grid container justify='center' spacing={24} >
+        <Grid container justify='center' spacing={5} >
           <Grid item  style={styles.items} onClick={ () => {this.toggleDrawer('newArrival', true)} } >
             <p>new arrival</p>
             <Drawer open={this.state.newArrival} onClose={() => {this.closeDrawer('newArrival', false)}}>

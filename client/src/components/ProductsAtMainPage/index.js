@@ -10,8 +10,16 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 
-function ProductList(props) {
+function pieceOfStocks(amount) {
+  return amount > 1 ? `${amount} pcs` : `${amount} pc`
+}
 
+function currencyConverter(amount) {
+  return `Rp ${amount.toLocaleString()}`
+}
+
+function ProductList(props) {
+  const userLoggedin = localStorage.getItem('token') ? true : false
   return (
     <Card style={{maxWidth: props.maxWidth, height: props.height, margin: 5}}>
       <CardActionArea>
@@ -26,11 +34,20 @@ function ProductList(props) {
         />
       </CardActionArea>
       <p style={{textAlign: 'center', fontSize: '0.7em'}}>{props.products.name}</p>
+      <p style={{textAlign: 'center', fontSize: '0.7em'}}>Stock: <strong>{pieceOfStocks(props.products.stock)}</strong> left</p>
+      <p style={{textAlign: 'center', fontSize: '0.7em'}}>{currencyConverter(props.products.price)}</p>
       <CardActions>
-        <Grid container justify="center">
+        <Grid container justify="center" direction="column">
           <Grid item>
-            <Link to={`/details/5cee0838b802c913eb647530`}><Button style={{fontSize: '0.5em'}}><u>Shop Now</u></Button></Link>
+            <Link to={`/details/${props.products._id}`}><Button style={{fontSize: '0.5em'}}><u>Shop Now</u></Button></Link>
           </Grid>
+          {userLoggedin ?
+            <Grid item>
+              <p style={{fontSize: '0.7em'}}><u>Add To Cart</u></p>
+            </Grid>
+            :
+            <></>
+          }
         </Grid>
       </CardActions>
     </Card>

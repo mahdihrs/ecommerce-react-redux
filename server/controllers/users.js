@@ -106,6 +106,7 @@ class Controller {
     }
 
     static create(req, res) {
+        console.log('masuk')
         User
             .create({
                 name: req.body.name,
