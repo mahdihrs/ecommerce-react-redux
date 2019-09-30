@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import ImageUploader from 'react-images-upload'
 
 //framework
-import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button'
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 //server
 import server from '../../api'
@@ -50,9 +50,9 @@ export default class AddProductForm extends Component {
     else if (field === 'price' && +val <= 0 ) console.log('Insufficient amount of price')
 
     if (field === 'name') this.setState({name: val})
-    else if (field = 'description') this.setState({description: val})
-    else if (field = 'stock') this.setState({stock: val})
-    else if (field = 'price') this.setState({price: val})
+    else if (field === 'description') this.setState({description: val})
+    else if (field === 'stock') this.setState({stock: val})
+    else if (field === 'price') this.setState({price: val})
 
     console.log(this.state)
   }

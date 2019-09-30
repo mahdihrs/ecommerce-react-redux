@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
 // components
-import ProductList from '../../components/ProductsAtMainPage'
+import ProductList from '../../components/ProductsAtMainPage/ProductsAtMainPage'
 
 //server
 import server from '../../api'

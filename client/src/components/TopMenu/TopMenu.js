@@ -5,10 +5,10 @@ import Grid from '@material-ui/core/Grid';
 import Drawer from '@material-ui/core/Drawer';
 
 //style
-import styles from './top-menu-style'
+import styles from './TopMenu.styles'
 
 //component(s)
-import MenuDetail from './Menu-Detail/'
+import MenuDetail from './MenuDetail/MenuDetail'
 
 //menu configuration
 import menus from './menu-configuration'

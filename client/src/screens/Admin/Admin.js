@@ -5,10 +5,10 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 
 // components
-import AdminTopMenu from '../../components/Admin-Top-Menu'
+import AdminTopMenu from '../../components/AdminTopMenu/AdminTopMenu'
 
 //styles
-import AdminStyles from './Admin-Styles'
+import AdminStyles from './Admin.styles'
 
 export default class Admin extends Component {
   render() {

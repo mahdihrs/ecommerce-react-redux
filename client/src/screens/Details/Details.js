@@ -18,12 +18,11 @@ function Details (props) {
     })
     .then(({data}) => {
       setProd(data)
-      console.log(props, 'props')
     })
     .catch(err => {
       console.log(err)
     })
-  }, [])
+  }, [props])
 
   const imageWidth = window.innerWidth * 20 / 100
 

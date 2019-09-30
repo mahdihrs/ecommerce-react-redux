@@ -49,6 +49,12 @@ function ButtonAppBar() {
               Login
             </Button>
           </Link>
+          {/* <Link to={`/`}> */}
+            <Button>
+              {/* ehe */}
+              <img src="https://img.icons8.com/ios/50/000000/shopping-cart.png" width="3%" alt="trolley-icons" />
+            </Button>
+          {/* </Link> */}
         </Toolbar>
       </AppBar>
     </div>

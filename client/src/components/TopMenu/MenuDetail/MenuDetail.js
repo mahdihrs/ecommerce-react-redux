@@ -10,7 +10,7 @@ import Drawer from '@material-ui/core/Drawer';
 import ListItemText from '@material-ui/core/ListItemText';
 
 //style
-import styles from './styles'
+import styles from './MenuDetail.styles'
 
 export default class MenuDetail extends Component {
   // state = {
