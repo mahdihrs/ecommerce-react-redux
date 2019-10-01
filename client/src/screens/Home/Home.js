@@ -28,7 +28,7 @@ function Home () {
 		dots: true,
 		infinite: true,
 		autoplay: true,
-		speed: 500,
+		speed: 1200,
 		arrows: false,
 		slidesToShow: 4,
 		slidesToScroll: 3

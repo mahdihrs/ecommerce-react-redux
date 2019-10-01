@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 
 //framework
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import Container from '@material-ui/core/Container';
 
 // components
 import ProductList from '../../components/ProductsAtMainPage/ProductsAtMainPage'
@@ -11,41 +11,35 @@ import ProductList from '../../components/ProductsAtMainPage/ProductsAtMainPage'
 //server
 import server from '../../api'
 
-const useStyles = makeStyles(theme => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center'
-  },
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-    width: '30%'//300,
-  },
-  dense: {
-    marginTop: 19,
-  },
-  menu: {
-    width: 200,
-  },
-}));
+//styles
+import useStyles from './Shop.styles';
 
-function Shop () {
+import dummies from '../../components/ProductsAtMainPage/dummy-products'
+
+let gridOnShopPage;
+
+if (dummies.length % 2 === 1) {
+  dummies.length < 5 ? gridOnShopPage = 6 : gridOnShopPage = 4
+} else {
+  dummies.length < 5 ? gridOnShopPage = 6 : gridOnShopPage = 3
+}
+
+function Shop() {
   const classes = useStyles();
-  const [ products, setProducts ] = useState([]) 
+  // const [products, setProducts] = useState([]);
 
-  useEffect( () => {
-    server({
-      url: `/products`,
-      method: 'get'
-    })
-    .then(({data}) => {
-      setProducts(data)
-      console.log(data)
-    })
-    .catch(err => {
-      console.log(err)
-    })
+  useEffect(() => {
+    // server({
+    //   url: `/products`,
+    //   method: 'get'
+    // })
+    // .then(({data}) => {
+    //   setProducts(data)
+    //   console.log(data)
+    // })
+    // .catch(err => {
+    //   console.log(err)
+    // })
   }, [])
 
   return (
@@ -58,21 +52,24 @@ function Shop () {
           margin="normal"
         />
       </form>
-      <Grid container spacing={1} justify="space-evenly" style={{marginTop: 40}}>
-        {products.map(e => {
-          return (
-            <div key={e._id}>
-              {/* <img src={e.image} /> */}
-              {/* <p>{e.description}</p> */}
-              <Grid item>
-                <ProductList products={e} maxWidth={225} height={350} contentHeight="200" />
+      <Container maxWidth="xl">
+        <Grid container justify="flex-start" style={{ marginTop: 40, height: '100vh' }}>
+          <Grid item className={classes.shopSideBar} lg={2}>
+            <p>123132</p>
+          </Grid>
+          <Grid container item justify="space-evenly" lg={10}>
+            {dummies.map((e, i) => {
+              return (
+                <Grid item key={i} lg={3} className={classes.productContainer}>
+                  <ProductList products={e} width={260} height={350} contentHeight="200" />
                 </Grid>
-            </div>
-          )
-        })}        
-      </Grid>
+              )
+            })}
+          </Grid>
+        </Grid>
+      </Container>
     </div>
   )
 }
 
-export default Shop
+export default Shop;
