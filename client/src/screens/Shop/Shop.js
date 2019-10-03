@@ -5,35 +5,33 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Container from '@material-ui/core/Container';
 
+// redux
+import { connect } from 'react-redux';
+import { fetchProductsOnShopPage } from '../../store/actions/ShopPage';
+
 // components
 import ProductList from '../../components/ProductsAtMainPage/ProductsAtMainPage'
 import SideMenu from '../../components/ShopComponents/SideMenu';
 
 //server
-import server from '../../api'
+import server from '../../api';
 
 //styles
 import useStyles from './Shop.styles';
 
 import dummies from '../../components/ProductsAtMainPage/dummy-products'
 
-function Shop() {
+function Shop({
+  products,
+  fetchProductsOnShopPage
+}) {
   const classes = useStyles();
   // const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    server({
-      url: `/products`,
-      method: 'get'
-    })
-    .then(({data}) => {
-      // setProducts(data)
-      console.log(data)
-    })
-    .catch(err => {
-      console.log(err)
-    })
-  }, [])
+    fetchProductsOnShopPage()
+  }, [fetchProductsOnShopPage])
+  console.log(products, '12345')
 
   return (
     <div>
@@ -65,4 +63,12 @@ function Shop() {
   )
 }
 
-export default Shop;
+const mapStateToProps = (state) => ({
+  products: state.shopPage.allProducts
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  fetchProductsOnShopPage: () => dispatch(fetchProductsOnShopPage())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Shop);

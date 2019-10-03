@@ -12,7 +12,7 @@ const dummies = [
     description: 'Designed to be lightweight and timelessly stylish, these navy espadrilles by Rivieras are the ideal choice on sunny holidays. This pair is made from breathable cotton with springy rubber soles for assured comfort. They will work from the beach to the bar - complete a classic summer look with a woven-straw fedora. Shown here with rag & bone shorts, Hartford shirt. Part of the MR PORTER essentials',
     price: 5400000,
     stock: 1,
-    image: espardilles
+    image: 'https://images.pexels.com/photos/1159343/pexels-photo-1159343.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'//espardilles
   }, {
     name: 'OFFICINE CREATIVE',
     description: `Officine Creative's 'Race' sneakers have one-piece suede uppers that wrap around the rubber soles for a smart, streamlined profile. Handmade in Italy, they have padded collars and smooth leather linings for comfort and are minimally detailed with the brand's name in gold letters. Wear them with everything from sweatpants to suits. Shown here with John Smedley sweater, Mr P. jacket, Officine Generale trousers, Mr P. socks.`,
