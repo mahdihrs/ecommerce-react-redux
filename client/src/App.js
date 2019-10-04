@@ -33,8 +33,8 @@ function App() {
             <Route exact path="/" component={ (props) => <Home /> } />
             <Route exact path="/login" component={ ( ) => <Login /> } />
             <Route exact path="/shop" component={Shop} />
-            {/* <Route exact path="/details/:id" component={Details} /> */}
-            <Route exact path="/details" component={Details} />
+            <Route exact path="/details/:id" component={Details} />
+            {/* <Route exact path="/details" component={Details} /> */}
             <Route exact path="/admin" component={ () => <Admin /> } />
             <Route exact path="/admin/add-product" component={ () => <AddProductForm /> } />
           </Switch>

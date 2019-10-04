@@ -33,7 +33,7 @@ const productSchema = new Schema({
     },
     image: {
         type: String,
-        required: [true, "Image can not be empty"],
+        // required: [true, "Image can not be empty"],
     },
     created_at: {
         type: Date,

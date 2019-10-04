@@ -74,12 +74,6 @@ const dummies = [
     price: 25900000,
     stock: 6,
     image: piaget
-  }, {
-    name: 'CÉLINE',
-    description: `Premium craftsmanship and quality is paramount to Seattle-based label Filson. Trimmed with resilient bridle leather trims, this tan briefcase is crafted from the brand's industrial-strength 'Rugged Twill' that's resistant to water and wear. The spacious interior is fitted with three handy compartments and precisely sized to meet airline carry-on requirements. Make use of the detachable shoulder strap to go hands-free. Shown here with Nigel Cabourn trousers, Neighborhood T-shirt, visvim jacket, Converse sneakers.`,
-    price: 9500000,
-    stock: 2,
-    image: celine
   }
 ]
 

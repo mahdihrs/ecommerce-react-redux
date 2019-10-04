@@ -13,9 +13,6 @@ import { fetchProductsOnShopPage } from '../../store/actions/ShopPage';
 import ProductList from '../../components/ProductsAtMainPage/ProductsAtMainPage'
 import SideMenu from '../../components/ShopComponents/SideMenu';
 
-//server
-import server from '../../api';
-
 //styles
 import useStyles from './Shop.styles';
 
@@ -48,11 +45,11 @@ function Shop({
           <Grid item className={classes.shopSideBar} xs={2}>
             <SideMenu />
           </Grid>
-          <Grid container item justify="space-evenly" xs={10}>
-            {dummies.map((dummy, i) => {
+          <Grid container item justify="flex-start" xs={10}>
+            {products.map((product, i) => {
               return (
-                <Grid item key={i} lg={3} className={classes.productContainer}>
-                  <ProductList products={dummy} width={260} height={350} contentHeight="200" />
+                <Grid item key={i} xs={3} className={classes.productContainer}>
+                  <ProductList products={product} width={260} height={350} contentHeight="200" />
                 </Grid>
               )
             })}

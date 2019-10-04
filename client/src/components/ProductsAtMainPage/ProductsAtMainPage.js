@@ -22,30 +22,32 @@ function currencyConverter(amount) {
   return `Rp ${amount.toLocaleString()}`
 }
 
-function ProductList({ 
-  width, 
-  height, 
-  products, 
-  contentHeight, 
-  ...props 
+function ProductList({
+  width,
+  height,
+  products,
+  contentHeight,
+  ...props
 }) {
   const userLoggedin = localStorage.getItem('token') ? true : false;
   const classes = useStyles({
-    width: width, 
+    width: width,
     height: height
   });
 
   return (
     <Card className={classes.cardContainer} >
       <CardActionArea>
-        <CardMedia
-          component="img"
-          alt={products.name}
-          height={contentHeight}
-          image={products.image}
-          title={products.name}
-          className={classes.cardMedia}
-        />
+        <Link to={`/details/${products._id}`}>
+          <CardMedia
+            component="img"
+            alt={products.name}
+            height={contentHeight}
+            image={products.image}
+            title={products.name}
+            className={classes.cardMedia}
+          />
+        </Link>
       </CardActionArea>
       <div>
         <Typography className={classes.cardDescription} component="p" variant="body1">{products.name}</Typography>
@@ -62,7 +64,7 @@ function ProductList({
             </Link>
           </Grid>
           {
-            userLoggedin 
+            userLoggedin
             &&
             <Grid item>
               <Typography variant="body1" className={classes.addToCartText}>

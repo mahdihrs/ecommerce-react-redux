@@ -7,6 +7,7 @@ const changeImageLink = require('../middlewares/imageLink')
 
 router.get('/', productController.getProducts)
 // router.post('/', Authentication, Authorization, image.multer.single('image'), image.sendUploadToGCS, changeImageLink, productController.createProduct)
+router.post('/', productController.createProduct)
 router.get('/:id', productController.findProduct)
 // router.put('/:id', Authentication, Authorization, image.multer.single('image'), image.sendUploadToGCS, changeImageLink, productController.editProduct)
 router.delete('/:id', Authentication, Authorization, productController.removeProduct)

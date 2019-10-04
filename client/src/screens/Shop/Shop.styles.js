@@ -24,8 +24,9 @@ const useStyles = makeStyles(theme => ({
   productContainer: {
     display: 'flex',
     justifyContent: 'center',
-    margin: '10px'
-  }
+    margin: '10px',
+    minWidth: 350
+}
 }));
 
 export default useStyles;
